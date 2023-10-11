@@ -1,0 +1,71 @@
+@import '../../styles/variables.scss';
+
+.dropdown {
+    .body {
+        padding: 15px;
+        padding-top: 0;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .info_container {
+            strong {
+                width: 100%;
+            }
+
+            span {
+                width: 100%;
+                font-size: 13px;
+            }
+        }
+
+        .count_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 105px;
+
+            button {
+                border: 1px solid $color-grey;
+                border-radius: 50%;
+                user-select: none;
+                text-align: center;
+                i {
+                    vertical-align: middle;
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: $color-grey;
+                    padding: 10px;
+                }
+                &:hover {
+                    border-color: $color-black;
+                    i {
+                        color: $color-black;
+                    }
+                }
+                &:disabled {
+                    cursor: no-drop;
+                    border-color: $border-color;
+                    color: $border-color;
+                    &:hover {
+                        border-color: $border-color;
+                        color: $border-color;
+                        i {
+                            color: $border-color;
+                        }
+                    }
+                    * {
+                        color: $border-color;
+                        cursor: no-drop;
+                    }
+                }
+            }
+        }
+    }
+}

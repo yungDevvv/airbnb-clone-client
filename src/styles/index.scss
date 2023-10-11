@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import './icons.scss';
+@import './variables.scss';
+@import './sections.scss';
+@import './pages.scss';
+@import './modals.scss';
+@import './sections.scss';
+@import './animations.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #222222;
+}
+
+body {
+    overflow-x: hidden !important;
+}
+
+main {
+    width: 100vw; // avoid page flickering when scrollbars are dynamically shown or hidden
+    padding-top: $desktop-header-height;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+button,
+a,
+span,
+li {
+    display: inline-block;
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+
+    &.input {
+        display: block;
+        width: 100% !important;
+    }
+}
+
+.hover-shadow {
+    transition: box-shadow 0.15s linear;
+
+    &:hover {
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1), 0 6px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    &.true {
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1), 0 6px 15px rgba(0, 0, 0, 0.08);
+    }
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+
+section {
+    margin: 30px 0;
+}
+
+.button {
+    border-radius: 8px;
+
+    >a {
+        width: 100%;
+        height: 100%;
+        color: inherit;
+    }
+
+    &.pink {
+        width: 100%;
+        text-align: center;
+        color: #FFFFFF;
+        font-weight: 600;
+        font-size: 18px;
+        background-color: $color-pink;
+        padding: 10px 0;
+        transition: background-color 0.10s linear;
+
+        &:hover {
+            background-color: rgba($color-pink, 0.8);
+        }
+    }
+
+    &.white {
+        background: #FFFFFF;
+        border: 1px solid #222222;
+        color: #222222;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    &.black {
+        background: $color-black;
+        color: #FFFFFF;
+        padding: 8px 16px;
+    }
+
+    &.underline {
+        color: $color-black;
+        text-decoration: underline;
+    }
+    
+    &.red {
+        color: red;
+        background: #FFFFFF;
+        border: 1px solid #222222;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+.border-bottom {
+    border-bottom: 1px solid rgba(#000, 0.1);
+}
+
+.input {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid $border-color;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 1128px;
+    margin: 0 auto;
+
+    &.wrap-small {
+        max-width: 600px;
+    }
+
+    &.relative {
+        position: relative;
+    }
+
+    &.center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+
+    &.card-flex {
+        margin: -10px;
+    }
+}
+
+main {
+    //padding-top: calc($desktop-header-height);
+}
+
+.has-images {
+    display: block;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    width: 100%;
+    border-radius: $radius;
+    overflow: hidden;
+
+    img {
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        object-position: 50% 50%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.description-text {
+    color: $color-grey;
+    font-size: 14px;
+}
+
+.datepicker-navbutton {
+    border: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 20px 0;
+
+    i {
+        font-size: 18px;
+    }
+
+    &:hover {
+        background-color: $border-color !important;
+    }
+}
+
+.drag-and-drop {
+    width: 100%;
+    max-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px dashed $border-color;
+    padding: 130px 0;
+
+    div,
+    p,
+    h2 {
+        position: relative;
+        z-index: -1;
+    }
+
+    &.drag-over {
+        border-color: #000;
+    }
+}
+
+.page-loader {
+    &.center {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.page-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

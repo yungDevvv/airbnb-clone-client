@@ -1,0 +1,44 @@
+@import '../../styles/variables.scss';
+
+    .count_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 105px;
+
+        button {
+            border: 1px solid $color-grey;
+            border-radius: 50%;
+            user-select: none;
+            text-align: center;
+            i {
+                vertical-align: middle;
+                font-size: 12px;
+                font-weight: 600;
+                color: $color-grey;
+                padding: 10px;
+            }
+            &:hover {
+                border-color: $color-black;
+                i {
+                    color: $color-black;
+                }
+            }
+            &:disabled {
+                cursor: no-drop;
+                border-color: $border-color;
+                color: $border-color;
+                &:hover {
+                    border-color: $border-color;
+                    color: $border-color;
+                    i {
+                        color: $border-color;
+                    }
+                }
+                * {
+                    color: $border-color;
+                    cursor: no-drop;
+                }
+            }
+        }
+    }

@@ -1,0 +1,45 @@
+@import '../../../styles/variables.scss';
+
+.body {
+
+}
+
+.row_element {
+    width: 100%;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    border-bottom: 1px solid $border-color;
+    &:last-child {
+        border-bottom: 0;
+    }
+    p {
+        font-size: 15px;
+        color: $color-grey;
+    }
+    form {
+        margin-top: 10px;
+        input {
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        button {
+            margin-top: 5px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+    }
+}
+
+.element_header {
+    display: flex;
+    justify-content: space-between;
+    h3 {
+        font-weight: 400;
+        font-size: 17px;
+    }
+    button {
+        font-size: 17px;
+    }
+}

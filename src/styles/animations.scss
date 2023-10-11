@@ -1,0 +1,39 @@
+.loading {
+    animation: rotate 1s infinite linear;
+    font-size: 18px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fade-in {
+    animation: fade 0.8s linear;
+    &.fast {
+        animation-duration: 0.20s;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    transform: translateY(0);
+}
+
+.slide-out {
+    transform: translateY(100%);
+}

@@ -1,0 +1,49 @@
+@import '../../styles/variables.scss';
+
+.link {
+    width: 100%;
+}
+.card {
+    width: 100%;
+    border: 1px solid $border-color;
+    display: flex;
+    border-radius: $radius-element;
+    overflow: hidden;
+    transition: border-color 0.15s linear;
+    margin: 8px 0px;
+    &:hover {
+        border-color: $color-black;
+    }
+}
+.has_image {
+    padding-bottom: 25%;
+    border-radius: 0;
+    max-width: 220px;
+}
+.body {
+    width: 100%;
+    padding: 15px;
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        h2 {
+            font-size: 17px;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            i {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .address {
+        font-size: 15px;
+    }
+
+    .country {
+        
+    }
+}

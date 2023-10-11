@@ -1,0 +1,117 @@
+/* HEADER */
+.search-open {
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 1;
+        background-color: rgba(#000, 0.35);
+    }
+}
+.header {
+    width: 100vw; // avoid page flickering when scrollbars are dynamically shown or hidden
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid $border-color;
+    height: $desktop-header-height;
+    padding: 15px 0;
+    background-color: #FFFFFF;
+    .wrap {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__search-panel {
+        justify-content: space-between;
+        align-items: center;
+        width: 300px;
+        padding: 7px;
+        border-radius: $radius;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+        border: 1px solid $border-color;
+
+        span {
+            margin-top: 2px;
+            margin-left: 10px;
+            transition: all 0.15s linear;
+        }
+
+        .search-panel-circle {
+            display: inline-block;
+            background-color: $color-pink;
+            border-radius: 50%;
+            transition: opacity 0.15s linear;
+            i {
+                font-weight: 600;
+                padding: 9px;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    &__user-panel {
+        cursor: pointer;
+        flex-wrap: nowrap !important;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: $radius;
+        border: 1px solid $border-color;
+        padding: 7px;
+        position: relative;
+
+        .user-panel-burger {
+            width: 100%;
+            margin-right: 20px;
+            margin-left: 5px;
+
+            i {
+                font-size: 20px;
+            }
+        }
+
+        .user-panel-icon {
+            user-select: none;
+            div {
+                border: 1px solid $border-color;
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+/* SUCCESS-HOST SECTION */
+
+.success-host {
+    .wrap {
+        h1 {
+            font-size: 35px;
+            color: green;
+        }
+        div {
+            img {
+                max-height: 400px;
+            }
+        }
+    }
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: #F7F7F7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

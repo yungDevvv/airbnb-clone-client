@@ -1,0 +1,118 @@
+@import '../../styles/variables.scss';
+
+.bar {
+    position: fixed;
+   
+    z-index: 1;
+   
+    background-color: #FFFFFF;
+    width: 100%;
+    width: 100vw;
+    .barBody {
+        display: flex;
+        padding: 15px 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .filters {
+        position: absolute;
+        right: 0px;
+        border: 1px solid $color-black;
+        border-radius: $radius-element;
+        padding: 8px 15px;
+        display: flex;
+        align-items: center;
+        i {
+            font-size: 17px;
+        }
+        span {
+            font-size: 16px;
+            margin-left: 10px;
+        }
+    }
+    .categoryButton {
+        cursor: pointer;
+        margin: 0 15px;
+        text-align: center;
+        position: relative;
+        &.active {
+            &:after {
+                background-color: #000; 
+            }
+            &:hover {
+                &:after {
+                    background-color: #000;
+                }
+            }
+            span {
+                color: #000;
+            }
+            div {
+                svg {
+                    path {
+                        stroke: #000;
+                    }
+    
+                    rect {
+                        stroke: #000;
+                    }
+                }
+            }
+        }
+        span {
+            color: #5B5B5B;
+            transition: all 0.10s linear;
+            font-size: 12px;
+        }
+
+        div {
+            svg {
+                width: 25px;
+                height: 25px;
+
+                path,
+                rect {
+                    transition: all 0.10s linear;
+                }
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: -10px;
+            height: 2px;
+        }
+        &:hover {
+            svg {
+                path {
+                    stroke: #000;
+                }
+
+                rect {
+                    stroke: #000;
+                }
+            }
+
+            span {
+                color: #000;
+            }
+            &:after {
+                background-color: rgba(#000, 0.2);
+            }
+        }
+    }
+}
+
+.activeFilterBlock {
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    background: #000;
+    color: #FFFFFF;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
+
+}

@@ -1,0 +1,16 @@
+@import '../../../styles/variables.scss';
+
+.button {
+    background-color: $color-pink;
+    border-radius: 10px;
+    transition: all 0.25s linear;
+    &:hover {
+        background-color: rgba(235, 76, 96, 1);
+    }
+    i {
+        font-weight: 600;
+        color: #fff;
+        font-size: 20px;
+        padding: 9px;
+    }
+}

@@ -1,0 +1,40 @@
+@import '../../../styles/variables.scss';
+
+.radioButton {
+    position: relative;
+    padding: 8px 23.5px;
+    border-radius: $radius-element;
+    margin: 0px 10px;
+    border: 1px solid $border-color;
+    cursor: pointer;
+
+    &:has(input:checked) {
+        background-color: $color-black;
+
+        span {
+            color: #FFFFFF;
+        }
+    }
+
+    &:hover {
+        border-color: $color-black;
+    }
+
+    input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    span {
+        font-size: 15px;
+        height: 0;
+    }
+
+
+}

@@ -1,0 +1,98 @@
+@import '../../styles/variables.scss';
+
+.card {
+    width: 35%;
+    padding: 24px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    border: 1px solid rgba(#000, 0.1);
+    border-radius: 15px;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: 5px;
+    .flex_jc {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .inputs {
+        position: relative;
+    }
+    .dates {
+        margin: 20px 0;
+        button {
+            width: 100%;
+            display: flex;
+            &:last-child { // guests
+                width: 100%;
+                
+                .guests {
+                    justify-content: space-between;
+                    width: 100%;
+                    border-bottom: 1px solid $border-color;
+                    border-radius: $radius-element;
+                    border-top-right-radius: 0;
+                    border-top-left-radius: 0;
+                    i {
+                        font-size: 18px;
+                        transform: rotate(0deg);
+                        &.true {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+            >div {
+                width: 50%;
+                padding: 10px;
+                border: 1px solid $border-color;
+                border-radius: $radius-element;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                user-select: none;
+
+                &:first-child {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                    border-bottom-left-radius: 0;
+                    border-bottom: 0;
+                }
+
+                &:nth-child(2) {
+                    border-bottom-left-radius: 0;
+                    border-top-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                    border-left: 0;
+                    border-bottom: 0;
+                }
+
+                span {
+                    font-size: 12px;
+                    width: 100%;
+                    display: block;
+                    text-align: start;
+                    &:first-child {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+    .total {
+        > div {
+            padding: 20px 0;
+            &:last-child {
+                padding-bottom: 0;
+            }
+            
+            > span {
+                &:first-child {
+                    text-decoration: underline;
+                }
+            }
+        }
+        .total_price {
+            border-top: 1px solid $border-color;
+        }
+    }
+}
