@@ -99,7 +99,7 @@ const CreateHostingForm = () => {
                         formContainer.current.innerHTML = `
                             <div class="page-center">
                                 <img src="${successImage}" alt="succes" />
-                                <p style="text-align: center">Information about your property was successefuly changed</p>
+                                <p style="text-align: center; color: green;">Information about your property was successefuly changed</p>
                             </div>
                         ` 
                         setTimeout(() => {
