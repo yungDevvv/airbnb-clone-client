@@ -57,11 +57,6 @@ const HousePage = () => {
                                         <h1>{currentHouse.title}</h1>
                                         <div className="flex">
                                             <span>{currentHouse.city}, {currentHouse?.country?.charAt(0).toUpperCase() + currentHouse?.country?.slice(1)}</span>
-                                            <span>
-                                                &nbsp;
-                                                <i className="lni lni-star-fill"></i>
-                                                4.3
-                                            </span>
                                         </div>
                                     </div>
                                     <div className='house-body'>

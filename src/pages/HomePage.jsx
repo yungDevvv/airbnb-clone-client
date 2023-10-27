@@ -15,7 +15,7 @@ const HomePage = () => {
         loading: state.loading
     }), shallow);
 
-    const calculateActiveFilters = useSearchStore(state => state.calculateActiveFilters)
+    const calculateActiveFilters = useSearchStore(state => state.calculateActiveFilters);
     const housesList = useHouseStore((state) => state.housesList);
     
     const [showFilterModal, setShowFilterModal] = useState(false);

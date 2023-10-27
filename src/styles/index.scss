@@ -22,6 +22,9 @@ body {
 main {
     width: 100vw; // avoid page flickering when scrollbars are dynamically shown or hidden
     padding-top: $desktop-header-height;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 a {
@@ -160,10 +163,6 @@ section {
     &.card-flex {
         margin: -10px;
     }
-}
-
-main {
-    //padding-top: calc($desktop-header-height);
 }
 
 .has-images {
