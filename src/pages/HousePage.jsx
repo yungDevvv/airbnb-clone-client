@@ -101,21 +101,6 @@ const HousePage = () => {
                                                         </p>
                                                         <button onClick={() => setShowDescriptionModal(true)}>See more</button>
                                                     </div>
-                                                    <div className='has-beds'>
-                                                        <h2>Where you'll sleep</h2>
-                                                        <div className="flex">
-                                                            <div className="bed">
-                                                                <img src={bedIcon} alt="" />
-                                                                <strong>Bedroom</strong>
-                                                                <span>1 king bed</span>
-                                                            </div>
-                                                            <div className="bed">
-                                                                <img src={bedIcon} alt="" />
-                                                                <strong>Bedroom</strong>
-                                                                <span>1 king bed</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                     <div className="has-comforts">
                                                         <h2>What this place offers</h2>
                                                         <div className="flex">

@@ -61,9 +61,9 @@ const ReservationCard = () => {
     }, [dateState.startDate, dateState.endDate])
 
     useEffect(() => {
-        if(dates && unavalableDates) {
+        if (dates && unavalableDates) {
             dates.forEach((date) => {
-                if(!unavalableDates.indexOf(date.toISOString())) {
+                if (!unavalableDates.indexOf(date.toISOString())) {
                     clearDates();
                     alert('We found that you choosed dates are already reservated, pick another dates, please!');
                     return;
@@ -75,11 +75,8 @@ const ReservationCard = () => {
         <div className={s.card}>
             <div className={s.flex_jc}>
                 <span>
-                    <strong>149 € </strong>
-                    per night
-                </span>
-                <span onClick={() => console.log(dates)}>
-                    <i className="lni lni-star-fill"></i> <span>4.5</span> 
+                    <strong>{price} €</strong>
+                    &nbsp; per night
                 </span>
             </div>
             <div className={s.inputs}>
@@ -113,16 +110,18 @@ const ReservationCard = () => {
                 Reserve
             </button>
             <p style={{ textAlign: "center", marginTop: "20px", fontSize: "14px" }}>You won't be charged yet</p>
-            <div className={s.total}>
-                <div className={s.flex_jc}>
-                    <span>€ {price} x {dates.length - 1} nights</span>
-                    <span>790€</span>
+            {dates.length !== 0 &&
+                <div className={s.total}>
+                    <div className={s.flex_jc}>
+                        <span>{price} € x {dates.length - 1} nights</span>
+                        <span>€ {price * (dates.length - 1)}</span>
+                    </div>
+                    <div className={`${s.flex_jc} ${s.total_price}`}>
+                        <strong>Total</strong>
+                        <strong>€ {price * (dates.length - 1)}</strong>
+                    </div>
                 </div>
-                <div className={`${s.flex_jc} ${s.total_price}`}>
-                    <strong>Total</strong>
-                    <strong>€ 890</strong>
-                </div>
-            </div>
+            }
             {showModal &&
                 <CalendarModal
                     setShowModal={setShowModal}
