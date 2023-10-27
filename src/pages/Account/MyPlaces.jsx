@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import HostingCard from '../../components/HostingCard/HostingCard'
 import { useUserStore } from '../../store/UserStore'
-import api from '../../http/axios';
+import PageLoader from '../../components/UI/PageLoader/PageLoader';
+
 
 const MyPlaces = () => {
     const getUserHouses = useUserStore(state => state.getUserHouses);
-    const userHouses = useUserStore(state => state.userHouses)
+    const { pageLoading } = useUserStore(state => ({ pageLoading: state.pageLoading }))
+    const userHouses = useUserStore(state => state.userHouses);
     useEffect(() => {
         const fetchUserHouses = async () => {
             await getUserHouses();
@@ -14,14 +16,19 @@ const MyPlaces = () => {
     }, [])
     return (
         <div className='my-hostings-page'>
-            <div className="wrap wrap-small">
-                <h1>There is the list of all your places</h1>
-                {userHouses.length &&
-                    userHouses.map((item, i) => (
-                       <HostingCard key={i} data={item} /> 
-                    ))
-                }
-            </div>
+            {!pageLoading
+                ? (
+                    <div className="wrap wrap-small">
+                        <h1>There is the list of all your places</h1>
+                        {userHouses.length &&
+                            userHouses.map((item, i) => (
+                                <HostingCard key={i} data={item} />
+                            ))
+                        }
+                    </div>
+                ) 
+                : <PageLoader />
+            }
         </div>
     )
 }

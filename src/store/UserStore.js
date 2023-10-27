@@ -10,6 +10,7 @@ export const useUserStore = create()(devtools(persist(
             updateUserError: null
         },
         loading: false,
+        pageLoading: false,
         user: JSON.parse(localStorage.getItem("user")) || null,
         userHouses: [],
         setUser: (user) => set(() => ({ user: user })),
@@ -84,12 +85,14 @@ export const useUserStore = create()(devtools(persist(
         },
         getUserHouses: async () => {
             let id = get().user._id;
+            set({pageLoading: true})
             try {
                 const res = await api.get("/api/houses/getUserHouses/" + id);
-                if (res.status !== 200) return;
                 set({ userHouses: res.data });
             } catch (error) {
                 console.error(error)
+            } finally {
+                set({pageLoading: false})
             }
         },
         deleteUserHouse: async (houseID, navigate) => {
