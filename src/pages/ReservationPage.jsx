@@ -4,6 +4,7 @@ import { useHouseStore } from '../store/HouseStore';
 import PageLoader from '../components/UI/PageLoader/PageLoader';
 import ButtonLoader from '../components/UI/ButtonLoader/ButtonLoader'
 import ErrorText from '../components/UI/Errors/ErrorText';
+import {houses_data} from '../utils/getHouses'
 
 const ReservationPage = () => {
     const [formData, setFormData] = useState({
@@ -120,7 +121,7 @@ const ReservationPage = () => {
                                                 <img src={img[0]} alt="" />
                                             </div>
                                             <div className="has-info">
-                                                <span>{house_type}</span>
+                                                <span>{houses_data.find(data => data.name === house_type).label}</span>
                                                 <p>{short_description}</p>
                                             </div>
                                         </div>

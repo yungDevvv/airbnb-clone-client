@@ -1,6 +1,5 @@
 import cabin from '../img/house_icons/Cabins.svg'
 import castle from '../img/house_icons/Castel.svg'
-import tropic from '../img/house_icons/Tropical.svg'
 import tree_houses from '../img/house_icons/Treehouses.svg'
 import arctic from '../img/house_icons/Arctic.svg'
 import cave from '../img/house_icons/Cave.svg'

@@ -20,10 +20,11 @@ const MyPlaces = () => {
                 ? (
                     <div className="wrap wrap-small">
                         <h1>There is the list of all your places</h1>
-                        {userHouses.length &&
-                            userHouses.map((item, i) => (
+                        {userHouses.length 
+                        ? userHouses.map((item, i) => (
                                 <HostingCard key={i} data={item} />
                             ))
+                        : <strong>No hosting created yet...</strong>
                         }
                     </div>
                 ) 

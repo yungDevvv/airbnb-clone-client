@@ -95,6 +95,7 @@ const SixthStep = ({ formError }) => {
                 break;
         }
     }
+   
     useEffect(() => {
         updateFields({images: [...previewImages]})
     }, [previewImages])

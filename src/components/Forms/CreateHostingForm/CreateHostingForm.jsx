@@ -67,7 +67,8 @@ const CreateHostingForm = () => {
                 break;
             case '5': // Sixth step
                 // The file format happens in drag and drop component, it automatticly don't read wrong format files
-                if (images.length < 4) {
+                console.log('VALIDATION')
+                if (images.length < 5) {
                     setFormError('Upload atleast 5 images');
                     success = false;
                 }
@@ -97,7 +98,7 @@ const CreateHostingForm = () => {
                     if(success) {
                         
                         formContainer.current.innerHTML = `
-                            <div class="page-center">
+                            <div class="page-center" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
                                 <img src="${successImage}" alt="succes" />
                                 <p style="text-align: center; color: green;">Information about your property was successefuly changed</p>
                             </div>
